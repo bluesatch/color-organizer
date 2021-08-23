@@ -36,7 +36,7 @@ const AddColorForm = ({ onNewColor = f => f}) => {
 
     const submit = e => { 
         e.preventDefault();
-        onNewColor(titleProps.value, colorProps);
+        onNewColor(titleProps.value, colorProps.value);
         resetTitle('');
         resetColor('');
     };
@@ -60,3 +60,5 @@ const AddColorForm = ({ onNewColor = f => f}) => {
 }
 
 export default AddColorForm;
+
+// adding to App
