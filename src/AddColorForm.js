@@ -3,8 +3,10 @@
 
 
 // import React, { useRef } from 'react';
-import React /*, { useState }*/ from 'react';
+import React from 'react';
 import { useInput } from './hooks';
+import {  useColors } from './color-hooks';
+
 
 
 const AddColorForm = ({ onNewColor = f => f}) => {
@@ -33,12 +35,13 @@ const AddColorForm = ({ onNewColor = f => f}) => {
     // Controlled Component 
     const [titleProps, resetTitle] = useInput('');
     const [colorProps, resetColor] = useInput('#000000');
+    const { addColor } = useColors();
 
     const submit = e => { 
         e.preventDefault();
-        onNewColor(titleProps.value, colorProps.value);
-        resetTitle('');
-        resetColor('');
+        addColor(titleProps.value, colorProps.value);
+        resetTitle();
+        resetColor();
     };
 
     return (

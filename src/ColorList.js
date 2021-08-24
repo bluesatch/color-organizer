@@ -2,9 +2,9 @@
 
 import React, { useContext } from 'react';
 // adding useContext hook 
-import { ColorContext } from './';
+// import { ColorContext } from './';
 import Color from './Color';
-
+import { useColors } from './color-hooks';
 // Color passes which color to remove using onRemoveColor
 // const ColorList =({ 
 //     colors = [], 
@@ -29,7 +29,8 @@ import Color from './Color';
 // }
 
 const ColorList =()=> {
-    const { colors } = useContext(ColorContext);
+    // const { colors } = useContext(ColorContext);
+    const { colors } = useColors();
     if (!colors.length) return <div>No Colors Listed. (Add a Color)</div>
 
     return (
